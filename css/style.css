@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100vh;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 255, 106, 0.278);
+}
+
+.matrix {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    width: 400px;
+    height: 400px;
+}
+
+.colored {
+    background-color: rgba(0, 162, 255, 0.278);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;    
+}
