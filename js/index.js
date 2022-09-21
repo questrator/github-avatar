@@ -9,11 +9,11 @@ const rangeColsLabel = document.querySelector("label[for='range-cols']");
 
 function getMatrix(cols, rows) {
     function getLine(cols) {
-        const firstHalf = Array.from({length: Math.ceil(cols / 2)}, () => Math.round(Math.random()));
+        const firstHalf = Array.from({ length: Math.ceil(cols / 2) }, () => Math.round(Math.random()));
         const secondHalf = firstHalf.slice(0, Math.floor(cols / 2)).reverse();
         return firstHalf.concat(secondHalf);
     }
-    return Array.from({length: rows}, () => getLine(cols)).flat(1);
+    return Array.from({ length: rows }, () => getLine(cols)).flat(1);
 }
 
 function createCells() {
@@ -34,7 +34,7 @@ function init() {
     createCells();
     const matrix = getMatrix(rangeCols.value, rangeRows.value);
     const matrixCells = document.querySelectorAll(".matrix-cell");
-    matrix.forEach((e, i) => e ? matrixCells[i].classList.add("colored") : void(0));
+    matrix.forEach((e, i) => e ? matrixCells[i].classList.add("colored") : void (0));
 }
 
 function getRanges() {
@@ -54,3 +54,25 @@ function refreshMatrix() {
 }
 
 window.onload = init();
+
+const saveButton = document.querySelector(".save-button");
+saveButton.addEventListener("click", convert);
+
+function convert() {
+    const avatar = document.querySelector(".avatar");
+    html2canvas(avatar).then(canvas => saveImage(canvas));
+}
+
+function saveImage(canvas) {
+    if (window.navigator.msSaveBlob) {
+        window.navigator.msSaveBlob(canvas.msToBlob(), "avatar.png");
+    }
+    else {
+        const a = document.createElement("a");
+        document.body.appendChild(a);
+        a.href = canvas.toDataURL("image/png");
+        a.download = "avatar.png";
+        a.click();
+        a.remove();
+    }
+}
