@@ -35,6 +35,10 @@
     flex-direction: column;    
 }
 
+label {
+    width: 200px;
+}
+
 @media (max-width: 796px) {
     .container {
         flex-direction: column;

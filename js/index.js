@@ -38,8 +38,8 @@ function init() {
 }
 
 function getRanges() {
-    rangeRowsLabel.textContent = `строк: ${rangeRows.value}`;
-    rangeColsLabel.textContent = `столбцов: ${rangeCols.value}`;
+    rangeRowsLabel.textContent = `${rangeRows.value}`;
+    rangeColsLabel.textContent = `${rangeCols.value}`;
 }
 
 function changeGrid() {
@@ -52,8 +52,6 @@ function refreshMatrix() {
     changeGrid();
     init();
 }
-
-window.onload = init();
 
 const saveButton = document.querySelector(".save-button");
 saveButton.addEventListener("click", convert);
@@ -76,3 +74,5 @@ function saveImage(canvas) {
         a.remove();
     }
 }
+
+window.onload = init();
