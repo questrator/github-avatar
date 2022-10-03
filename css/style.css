@@ -15,7 +15,7 @@
     align-items: center;
     width: 450px;
     height: 450px;
-    background-color: rgba(0, 255, 106, 0.278);
+    background-color: transparent;
 }
 
 .matrix {
@@ -27,7 +27,7 @@
 }
 
 .colored {
-    background-color: rgba(0, 162, 255, 0.278);
+    background-color: transparent;
 }
 
 .options {
