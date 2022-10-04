@@ -62,7 +62,6 @@ function refreshMatrix() {
     removeCells();
     changeGrid();
     init();
-    setColor();
 }
 
 const saveButton = document.querySelector(".save-button");
