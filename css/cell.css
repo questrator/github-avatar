@@ -1,0 +1,45 @@
+:root{
+    --cell-padding: 2px;
+    --cell-height: 60px;
+    --cell-width: 60px;
+}
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(130, 130, 130);
+}
+
+.field {
+    display: block;
+    height: 420px;
+    width: 420px;
+    background-color: rgb(191, 191, 191);
+}
+
+.field-matrix {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.cell {
+    display: block;
+    box-sizing: border-box;
+    padding: var(--cell-padding);
+    height: var(--cell-height);
+    width: var(--cell-width);
+    background-color: rgb(255, 255, 255);
+}
+
+.cell-block {
+    display: block;
+    height: calc(var(--cell-height) - 2 * var(--cell-padding));
+    width: calc(var(--cell-width) - 2 * var(--cell-padding));
+    background-color: rgb(178, 42, 42);
+    transition: all 2s ease;
+}
