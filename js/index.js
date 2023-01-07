@@ -1,11 +1,15 @@
 const matrixGrid = document.querySelector(".matrix");
+const avatar = document.querySelector(".avatar");
 const rangeRows = document.querySelector(".range-rows");
 const rangeRowsLabel = document.querySelector("label[for='range-rows']");
 const rangeCols = document.querySelector(".range-cols");
 const rangeColsLabel = document.querySelector("label[for='range-cols']");
+const colorMain = document.querySelector(".color-main");
+const colorBackA = document.querySelector(".color-back-a");
+const colorBackB = document.querySelector(".color-back-b");
 
 [rangeCols, rangeRows].forEach(e => e.addEventListener("input", refreshMatrix));
-
+[colorMain, colorBackA, colorBackB].forEach(e => e.addEventListener("input", setColor));
 
 function getMatrix(cols, rows) {
     function getLine(cols) {
@@ -35,6 +39,7 @@ function init() {
     const matrix = getMatrix(rangeCols.value, rangeRows.value);
     const matrixCells = document.querySelectorAll(".matrix-cell");
     matrix.forEach((e, i) => e ? matrixCells[i].classList.add("colored") : void (0));
+    setColor();
 }
 
 function getRanges() {
@@ -45,6 +50,12 @@ function getRanges() {
 function changeGrid() {
     matrixGrid.style.gridTemplateColumns = `repeat(${rangeCols.value}, 1fr)`;
     matrixGrid.style.gridTemplateRows = `repeat(${rangeRows.value}, 1fr)`;
+}
+
+function setColor() {
+    const coloreds = document.querySelectorAll(".colored");
+    coloreds.forEach(e => e.style.setProperty("background-color", `${colorMain.value}`));
+    avatar.style.setProperty("background-image", `linear-gradient(to bottom, ${colorBackA.value}, ${colorBackB.value})`);
 }
 
 function refreshMatrix() {
@@ -76,3 +87,5 @@ function saveImage(canvas) {
 }
 
 window.onload = init();
+
+//2520

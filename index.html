@@ -8,28 +8,33 @@
     <title>GitHub Avatar Generator</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/html2canvas.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="avatar">
             <div class="matrix">
-
+                
             </div>
         </div>
         <div class="options">
             <div>
-                <input id="range-cols" class="range-cols" type="range" min="5" max="9" value="7" />
+                <input id="range-cols" class="range-cols" type="range" min="5" max="9" value="5" />
                 <label for="range-cols"></label>
             </div>            
             <div>
-                <input id="range-rows" class="range-rows" type="range" min="5" max="9" value="7" />
+                <input id="range-rows" class="range-rows" type="range" min="5" max="9" value="5" />
                 <label for="range-rows"></label>
             </div>
-            <button class="save-button">Скачать</button>
+            <div>
+                <input type="color" name="color" id="color-main" class="color-main" value="#5aba72">
+                <input type="color" name="color" id="color-back-a" class="color-back-a" value="#d8ffa8">
+                <input type="color" name="color" id="color-back-b" class="color-back-b" value="#a0e3bd">
+            </div>
+            <button class="save-button">Download</button>
         </div>     
     </div>
+    <script src="./js/html2canvas.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

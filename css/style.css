@@ -13,21 +13,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 450px;
-    height: 450px;
-    background-color: rgba(0, 255, 106, 0.278);
+    width: 448px;
+    height: 448px;
+    background-color: transparent;
 }
 
 .matrix {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 400px;
     height: 400px;
 }
 
 .colored {
-    background-color: rgba(0, 162, 255, 0.278);
+    background-color: transparent;
 }
 
 .options {
